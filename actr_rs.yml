@@ -1,0 +1,7 @@
+name: actr_rs
+channels:
+  - conda-forge
+dependencies:
+  - python==3.8
+  - ipykernel
+  - pandas
