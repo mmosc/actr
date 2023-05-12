@@ -5,6 +5,8 @@ import numpy as np
 import ranky as rk
 from paths.paths import *
 
+from config.config import CALC_REWARD, USE_CONTENT
+
 from recbole.utils import (
     init_logger,
     get_model,
@@ -252,7 +254,7 @@ def load_file(filename):
     return events
 
 
-def preprocess(events, use_content, calc_reward):
+def preprocess(events, use_content=USE_CONTENT, calc_reward=CALC_REWARD):
     """
     preprocess user-data
     """
