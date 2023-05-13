@@ -202,16 +202,3 @@ def actr_score(bll, assoc, val, train, item_embedding_matrix_spotify=None, item_
 
     return scores
 
-
-def marta_actr_score(train):
-    """
-    Returns both the individual act-r scores and their aggregated version with softmax
-    """
-    score_bll = BaseLevelComponent(decay=0.5).score(train)
-    score_assoc = AssociativeComponent().score(train)
-    valu = ValuationComponent().score(train)
-
-    score_list = [score_assoc, score_bll, valu]
-    scores = aggregate_scores(score_list, method='scoring')
-
-    return softmax(score_list), scores
